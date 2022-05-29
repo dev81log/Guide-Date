@@ -1,11 +1,14 @@
-﻿//var data = new DateTime(2022, 05, 25, 12, 30, 10);
+﻿using System.Globalization;
 
-// Console.WriteLine(data);
-// Console.WriteLine(data.Year);
-// Console.WriteLine(data.Month);
-// Console.WriteLine(data.Day);
-// Console.WriteLine((int)data.DayOfWeek);
+var dataModel = new DateTime(2022, 05, 25, 12, 30, 10);
 
+Console.WriteLine(dataModel);
+Console.WriteLine(dataModel.Year);
+Console.WriteLine(dataModel.Month);
+Console.WriteLine(dataModel.Day);
+Console.WriteLine((int)dataModel.DayOfWeek);
+
+Console.WriteLine("=================");
 
 var data = DateTime.Now;
 
@@ -21,6 +24,7 @@ Console.WriteLine(formatadoSystem);
 Console.WriteLine(formatadoJson);
 Console.WriteLine(formatadoUniversal);
 
+Console.WriteLine("=================");
 
 var dia = data.AddDays(10);
 var mes = data.AddMonths(1);
@@ -32,5 +36,23 @@ Console.WriteLine(ano);
 
 if (data.Date == DateTime.Today)
     Console.WriteLine("igual");
-    
+
 Console.WriteLine(data);
+
+Console.WriteLine("=================");
+
+var pt = new CultureInfo("pt-BR");
+var de = new CultureInfo("de-DE");
+
+Console.WriteLine(DateTime.Now.ToString("D", pt));
+Console.WriteLine(DateTime.Now.ToString("D", de));
+
+var timeZoneAustralia =
+    TimeZoneInfo.FindSystemTimeZoneById("Pacific/Auckland");
+
+Console.WriteLine(timeZoneAustralia);
+
+Console.WriteLine("=================");
+
+var timeSpan = new TimeSpan();
+Console.WriteLine(timeSpan);
