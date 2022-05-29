@@ -56,3 +56,15 @@ Console.WriteLine("=================");
 
 var timeSpan = new TimeSpan();
 Console.WriteLine(timeSpan);
+
+Console.WriteLine("=================");
+
+Console.WriteLine(DateTime.DaysInMonth(2022, 5));
+Console.WriteLine(IsWeekend(DateTime.Now.DayOfWeek));
+Console.WriteLine(DateTime.Now.IsDaylightSavingTime());
+
+
+static bool IsWeekend(DayOfWeek today)
+{
+    return today is DayOfWeek.Saturday or DayOfWeek.Sunday;
+}
